@@ -207,37 +207,11 @@ cd module_webapp
 python OD_flaskapp.py
 ```
 
-Open `http://127.0.0.1:5000`, upload a vehicle photograph, and read the crop and the decoded string. The process writes the boxed image under `module_webapp/static/predict/` and the crop under `module_webapp/static/roi/`. Those directories are created on startup. Their image contents are gitignored.
+Open `http://127.0.0.1:5000`, upload a vehicle photograph, and read the crop and the decoded string. The app saves the boxed frame under `module_webapp/static/predict/` and the crop under `module_webapp/static/roi/`. Those folders are created on startup.
 
 `OD_flaskapp.py` serves with Flask’s debugger. Use it on a local machine only.
 
 `deeplearning.py` raises `FileNotFoundError` with the expected path if `models/object_detectionv3.h5` is missing, instead of failing inside Keras.
-
-## What is left out of git
-
-These paths are listed in [`.gitignore`](.gitignore). They can be deleted locally once the Kaggle dataset and a backup of `object_detectionv3.h5` exist. They were left on disk in this working copy so training images and the current weights are not destroyed by the cleanup.
-
-| Path | Why it is excluded |
-| --- | --- |
-| `number_Plate_raw/` | Raw photographs and XML. Canonical copy is the Kaggle dataset. About 2,279 files. |
-| `test/` | Local test photographs, about 300 MB. |
-| `*.h5`, including `models/*.h5` and `module_webapp/static/models/*.h5` | Each checkpoint is about 850 MB. The loader reads only `models/object_detectionv3.h5`. |
-| `models/logs/` | TensorBoard event files. |
-| `labelimg-master/` | Upstream LabelImg tree. Annotation output is already in `final_labels.csv`. |
-| `tesseract-ocr-tesseract-b1cb50d/` | Upstream Tesseract source. Install the binary; do not vendor the engine. |
-| `ABNPR/` | Separate TensorFlow Object Detection course materials. Not the Inception-ResNet-v2 pipeline in this README. |
-| `csv_label/labels.csv`, `csv_label/labelsv2.csv` | Earlier label exports. `final_labels.csv` is the reference table. |
-| `module_webapp/static/{upload,predict,roi}/*` | Images produced by the demo. |
-| `__pycache__/`, `.ipynb_checkpoints/`, `.idea/`, `*.rar` | Caches, editor state, and archives. |
-
-Safe local deletion, after you have confirmed Kaggle access and a copy of the v3 weights:
-
-```powershell
-Remove-Item -Recurse -Force .\number_Plate_raw, .\labelimg-master, .\tesseract-ocr-tesseract-b1cb50d, .\ABNPR, .\test
-Remove-Item -Force .\models\*.h5, .\module_webapp\static\models\*.h5, .\csv_label\labels.csv, .\csv_label\labelsv2.csv
-```
-
-Keep `models/object_detectionv3.h5` if you still want to run inference on this machine. The command above removes it on purpose; download or retrain before deleting if it is your only copy.
 
 ## Limitations and further work
 

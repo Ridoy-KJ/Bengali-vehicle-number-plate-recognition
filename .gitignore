@@ -26,7 +26,7 @@ module_webapp/static/models/
 # Raw images live on Kaggle, not in git
 number_Plate_raw/
 
-# Third-party tools and course trees (not part of this pipeline)
+# Local tooling and the research workspace. Kept off the public repository.
 labelimg-master/
 tesseract-ocr-tesseract-b1cb50d/
 ABNPR/
