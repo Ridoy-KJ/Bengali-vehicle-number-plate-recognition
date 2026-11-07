@@ -1,0 +1,18 @@
+# Inception-ResNet-v2 localization (Kaggle notebook used Python 3.10 and TensorFlow 2.x)
+tensorflow>=2.10,<2.16
+numpy>=1.23,<2.0
+pandas>=1.5
+scikit-learn>=1.1
+Pillow>=9.0
+opencv-python>=4.6
+
+# Plate OCR and the Flask demo
+pytesseract>=0.3.10
+autoocr==0.0.3
+flask>=2.2
+
+# Notebook visualization
+matplotlib>=3.5
+plotly>=5.10
+jupyter>=1.0
+nbconvert>=7.0

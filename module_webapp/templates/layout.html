@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Bengali Numberplate OCR</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            body {
+              
+              background-image: url('https://storage.icograms.com/templates/preview/ANPR.png');
+              background-color: rgba(255, 255, 255, 0.2);
+              background-size: 40% 50%;
+              background-repeat:no-repeat;
+              background-attachment: fixed;
+              background-position:center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h1 class="display-6">Bengali Numberplate OCR</h1>
+
+                </a>
+            </div>
+        </nav>
+
+        {% block body %}
+        
+        {% endblock %}
+        <!-- Footer -->
+        <footer style="padding:20px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #b4cada;
+        color: #fff;
+        text-align: center;">
+            <a href="https://www.kaggle.com/code/ridoykj/automatic-bengali-number-plate-recognition">   - - - - - Model Training Notebook & Dataset - - - - - </a>
+        </footer>
+
+    </body>
+</html>
